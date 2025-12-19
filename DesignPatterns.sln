@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decorator", "Decorator\Deco
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite", "Composite\Composite.csproj", "{AD97FE79-6365-4FB3-B779-68A12919F7E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facade", "Facade\Facade.csproj", "{D00E6862-352B-40B4-86B6-6585CC8E691D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +141,18 @@ Global
 		{AD97FE79-6365-4FB3-B779-68A12919F7E9}.Release|x64.Build.0 = Release|Any CPU
 		{AD97FE79-6365-4FB3-B779-68A12919F7E9}.Release|x86.ActiveCfg = Release|Any CPU
 		{AD97FE79-6365-4FB3-B779-68A12919F7E9}.Release|x86.Build.0 = Release|Any CPU
+		{D00E6862-352B-40B4-86B6-6585CC8E691D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D00E6862-352B-40B4-86B6-6585CC8E691D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D00E6862-352B-40B4-86B6-6585CC8E691D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D00E6862-352B-40B4-86B6-6585CC8E691D}.Debug|x64.Build.0 = Debug|Any CPU
+		{D00E6862-352B-40B4-86B6-6585CC8E691D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D00E6862-352B-40B4-86B6-6585CC8E691D}.Debug|x86.Build.0 = Debug|Any CPU
+		{D00E6862-352B-40B4-86B6-6585CC8E691D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D00E6862-352B-40B4-86B6-6585CC8E691D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D00E6862-352B-40B4-86B6-6585CC8E691D}.Release|x64.ActiveCfg = Release|Any CPU
+		{D00E6862-352B-40B4-86B6-6585CC8E691D}.Release|x64.Build.0 = Release|Any CPU
+		{D00E6862-352B-40B4-86B6-6585CC8E691D}.Release|x86.ActiveCfg = Release|Any CPU
+		{D00E6862-352B-40B4-86B6-6585CC8E691D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
