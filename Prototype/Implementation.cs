@@ -1,3 +1,6 @@
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Text.Json;
+
 namespace Prototype;
 
 /// <summary>
@@ -7,7 +10,7 @@ public abstract class Person
 {
     public abstract string Name { get; set; }
 
-    public abstract Person Clone();
+    public abstract Person Clone(bool deepCLone);
 }
 
 /// <summary>
@@ -22,8 +25,13 @@ public class Manager : Person
         Name = name;
     }
 
-    public override Person Clone()
+    public override Person Clone(bool deepClone = false)
     {
+        if (deepClone)
+        {
+            var objectAsJson = JsonSerializer.Serialize(this);
+            return JsonSerializer.Deserialize<Manager>(objectAsJson)!;
+        }
         return (Person)MemberwiseClone();
     }
 }
@@ -42,8 +50,13 @@ public class Employee : Person
         Manager = manager;
     }
 
-    public override Person Clone()
+    public override Person Clone(bool deepClone = false)
     {
+        if (deepClone)
+        {
+            var objectAsJson = JsonSerializer.Serialize(this);
+            return JsonSerializer.Deserialize<Employee>(objectAsJson)!;
+        }
         return (Person)MemberwiseClone();
     }
 }
