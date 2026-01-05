@@ -14,4 +14,12 @@ var myDocumentProxy = new Proxy.DocumentProxy("MyDocument.pdf");
 Console.WriteLine("Document proxy constructed");
 myDocumentProxy.DisplayDocument();
 
+Console.WriteLine();
+
+// with chained proxy
+Console.WriteLine("Constructing protected document proxy");
+var myProtectedDocumentProxy = new Proxy.ProtectedDocumentProxy("MyDocument.pdf", "Viewer");
+Console.WriteLine("Protected document proxy constructed");
+myProtectedDocumentProxy.DisplayDocument();
+
 Console.ReadKey();
