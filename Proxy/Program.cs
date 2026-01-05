@@ -22,4 +22,12 @@ var myProtectedDocumentProxy = new Proxy.ProtectedDocumentProxy("MyDocument.pdf"
 Console.WriteLine("Protected document proxy constructed");
 myProtectedDocumentProxy.DisplayDocument();
 
+Console.WriteLine();
+
+// with chained proxy, no access
+Console.WriteLine("Constructing protected document proxy");
+myProtectedDocumentProxy = new Proxy.ProtectedDocumentProxy("MyDocument.pdf", "AnotherRole");
+Console.WriteLine("Protected document proxy constructed");
+myProtectedDocumentProxy.DisplayDocument();
+
 Console.ReadKey();
