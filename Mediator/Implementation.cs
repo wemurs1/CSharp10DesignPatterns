@@ -13,6 +13,8 @@ public interface IChatRoom
 {
     void Register(TeamMember teamMember);
     void Send(string from, string message);
+    void Send(string from, string to, string message);
+    void SendTo<T>(string from, string message) where T : TeamMember;
 }
 
 /// <summary>
@@ -37,6 +39,16 @@ public abstract class TeamMember
     public void Send(string message)
     {
         _chatRoom?.Send(Name, message);
+    }
+
+    public void Send(string to, string message)
+    {
+        _chatRoom?.Send(Name, to, message);
+    }
+
+    public void SendTo<T>(string message) where T : TeamMember
+    {
+        _chatRoom?.SendTo<T>(Name, message);
     }
 
     public virtual void Receive(string from, string message)
@@ -93,6 +105,20 @@ public class TeamChatRoom : IChatRoom
     public void Send(string from, string message)
     {
         foreach (var teamMember in teamMembers.Values)
+        {
+            teamMember.Receive(from, message);
+        }
+    }
+
+    public void Send(string from, string to, string message)
+    {
+        var teamMember = teamMembers[to];
+        teamMember?.Receive(from, message);
+    }
+
+    public void SendTo<T>(string from, string message) where T : TeamMember
+    {
+        foreach (var teamMember in teamMembers.Values.OfType<T>())
         {
             teamMember.Receive(from, message);
         }
