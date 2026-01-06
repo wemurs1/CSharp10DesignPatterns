@@ -87,6 +87,7 @@ public interface ICommand
 {
     void Execute();
     bool CanExecute();
+    void Undo();
 }
 
 public class AddEmployeeToManagerList : ICommand
@@ -121,6 +122,14 @@ public class AddEmployeeToManagerList : ICommand
             _employeeManagerRepository.AddEmployee(_managerId, _employee);
         }
     }
+
+    public void Undo()
+    {
+        if (_employee != null)
+        {
+            _employeeManagerRepository.RemoveEmployee(_managerId, _employee);
+        }
+    }
 }
 
 /// <summary>
@@ -128,9 +137,28 @@ public class AddEmployeeToManagerList : ICommand
 /// </summary>
 public class CommandManager
 {
+private readonly Stack<ICommand> _commands = new();
+
     public void Invoke(ICommand command)
     {
         if (command.CanExecute()) command.Execute();
+        _commands.Push(command);
+    }
+
+    public void Undo()
+    {
+        if (_commands.Any())
+        {
+            _commands.Pop().Undo();
+        }
+    }
+
+    public void UndoAll()
+    {
+        while (_commands.Any())
+        {
+            _commands.Pop().Undo();
+        }
     }
 }
 
