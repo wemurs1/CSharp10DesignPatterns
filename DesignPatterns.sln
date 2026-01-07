@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediator", "Mediator\Mediat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfResponsibility", "ChainOfResponsibility\ChainOfResponsibility.csproj", "{3892C86C-9C3E-4259-B6B7-6F60790F254F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer", "Observer\Observer.csproj", "{F6F4C959-77E8-4690-8B2A-54BA4253FC36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -265,6 +267,18 @@ Global
 		{3892C86C-9C3E-4259-B6B7-6F60790F254F}.Release|x64.Build.0 = Release|Any CPU
 		{3892C86C-9C3E-4259-B6B7-6F60790F254F}.Release|x86.ActiveCfg = Release|Any CPU
 		{3892C86C-9C3E-4259-B6B7-6F60790F254F}.Release|x86.Build.0 = Release|Any CPU
+		{F6F4C959-77E8-4690-8B2A-54BA4253FC36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6F4C959-77E8-4690-8B2A-54BA4253FC36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6F4C959-77E8-4690-8B2A-54BA4253FC36}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F6F4C959-77E8-4690-8B2A-54BA4253FC36}.Debug|x64.Build.0 = Debug|Any CPU
+		{F6F4C959-77E8-4690-8B2A-54BA4253FC36}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F6F4C959-77E8-4690-8B2A-54BA4253FC36}.Debug|x86.Build.0 = Debug|Any CPU
+		{F6F4C959-77E8-4690-8B2A-54BA4253FC36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6F4C959-77E8-4690-8B2A-54BA4253FC36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6F4C959-77E8-4690-8B2A-54BA4253FC36}.Release|x64.ActiveCfg = Release|Any CPU
+		{F6F4C959-77E8-4690-8B2A-54BA4253FC36}.Release|x64.Build.0 = Release|Any CPU
+		{F6F4C959-77E8-4690-8B2A-54BA4253FC36}.Release|x86.ActiveCfg = Release|Any CPU
+		{F6F4C959-77E8-4690-8B2A-54BA4253FC36}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
