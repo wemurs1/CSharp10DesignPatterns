@@ -19,7 +19,8 @@ using IHost host = Host.CreateDefaultBuilder(args)
         services.AddScoped<RepositoryDemoService>();
         services.AddScoped<UnitOfWorkDemoService>();
 
-        services.AddScoped<IRepository<Order>, GenericOrderRepository>();
+        // services.AddScoped<IRepository<Order>, GenericOrderRepository>();
+        services.AddScoped<IRepository<Order>, GenericEFCoreRepository<Order>>();
 
     }).Build();
 
