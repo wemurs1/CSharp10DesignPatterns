@@ -17,7 +17,8 @@ public class Customer : IElement
 
     public void Accept(IVisitor visitor)
     {
-        visitor.VisitCustomer(this);
+        // visitor.VisitCustomer(this);
+        visitor.Visit(this);
         Console.WriteLine($"Visited {nameof(Customer)} {Name}, discount given: {Discount}");
     }
 }
@@ -39,18 +40,27 @@ public class Employee : IElement
 
     public void Accept(IVisitor visitor)
     {
-        visitor.VisitEmployee(this);
+        // visitor.VisitEmployee(this);
+        visitor.Visit(this);
         Console.WriteLine($"Visited {nameof(Employee)} {Name}, discount given: {Discount}");
     }
 }
 
+// /// <summary>
+// /// Visitor
+// /// </summary>
+// public interface IVisitor
+// {
+//     void VisitCustomer(Customer customer);
+//     void VisitEmployee(Employee employee);
+// }
+
 /// <summary>
-/// Visitor
+/// Visitor (alternative)
 /// </summary>
 public interface IVisitor
 {
-    void VisitCustomer(Customer customer);
-    void VisitEmployee(Employee employee);
+    void Visit(IElement element);
 }
 
 /// <summary>
@@ -68,7 +78,13 @@ public class DiscountVisitor : IVisitor
 {
     public decimal TotalDiscountGiven { get; set; }
 
-    public void VisitCustomer(Customer customer)
+    public void Visit(IElement element)
+    {
+        if (element is Customer) VisitCustomer((Customer)element);
+        else if (element is Employee) VisitEmployee((Employee)element);
+    }
+
+    private void VisitCustomer(Customer customer)
     {
         // percentage of total amount
         var discount = customer.AmountOrdered / 10;
@@ -78,7 +94,7 @@ public class DiscountVisitor : IVisitor
         TotalDiscountGiven += discount;
     }
 
-    public void VisitEmployee(Employee employee)
+    private void VisitEmployee(Employee employee)
     {
         // fixed value depending on the amount of years employed
         var discount = employee.YearsEmployed < 10 ? 100 : 200;
