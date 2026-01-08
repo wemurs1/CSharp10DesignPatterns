@@ -482,3 +482,4 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+Enterprise Patterns/EnterprisePatterns/Orders.db
